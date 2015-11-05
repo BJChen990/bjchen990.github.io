@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/porm.css">
+<link href='http://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+<script src="js/jquery-2.1.0.min.js"></script>
+<title>2014NCTUxPROM</title>
+</head>
+
+<body>
+  <div class="background-black">
+    <div class="count_down_pic home">
+      <div class="filter row">
+        <div class="col-md-4 sidebar">
+          <div class="sidebar-upper">
+            <p id="slogan">2014NCTUxPROM</p>
+            <div id="logo"></div>
+          </div>
+          <div class="sidebar-middle">
+            <ul class="list-group">
+              <li class="list-group-item opti-list-item" id="home">
+              Home
+              </li>
+            </ul>
+          </div>
+          <div class="sidebar-bottom">
+            <ul class="list-group countdown_list">
+              <li class="list-group-item opti-list-item count_list" id="30">
+              Day 30
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="29">
+              Day 29
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="27">
+              Day 27
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="25">
+              Day 25
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="22">
+              Day 22
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="21">
+              Day 21
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="20">
+              Day 20
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="17">
+              Day 17
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="16">
+              Day 16
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="14">
+              Day 14
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="12">
+              Day 12
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="10">
+              Day 10
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="9">
+              Day 9
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="8">
+              Day 8
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="7">
+              Day 7
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="6">
+              Day 6
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="5">
+              Day 5
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="4">
+              Day 4
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="3">
+              Day 3
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="2">
+              Day 2
+              </li>
+              <li class="list-group-item opti-list-item count_list" id="1">
+              Day 1
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-8 main">
+          <div class="blank">
+          		<a id="facebook" href="https://www.facebook.com/nctu103prom"></a>
+          </div>
+          <div class="row">
+            <div class="count_down_counter col-md-offset-6 col-md-6">
+              <p><span>0</span>Days Left</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="imgCommingSoon imgHome" style="display: none"></div>
+<script>
+  $(".sidebar-bottom").hover( function(e){ $(this).addClass('show'); });
+  $(".opti-list-item").hover( function(e){ $(this).fadeTo('fast',0.2)}, function(e){$(this).fadeTo('fast',1)});
+  $(".count_list").hover( function(e){ $(this).fadeTo('fast',0.2)}, function(e){$(this).fadeTo('fast',1)});
+  $(".countdown_list li").click( function(e){
+    var newClass = this.getAttribute("id");
+	$(".count_down_pic").animate({opacity: 0.15}, 800, function() {
+        var classes = $(this).attr("class").split(" ");
+        var currentClass = classes[classes.length-1];
+        $(this).removeClass(currentClass).addClass("day-"+newClass+"-left").animate({opacity: 1},1600);
+    });
+  });
+  $("#home").click( function(e){
+    var newClass = this.getAttribute("id");
+	$(".count_down_pic").animate({opacity: 0.15}, 800, function() {
+        var classes = $(this).attr("class").split(" ");
+        var currentClass = classes[classes.length-1];
+        $(this).removeClass(currentClass).addClass('home').animate({opacity: 1},1600);
+    });
+  });
+</script>
+</body>
+</html>

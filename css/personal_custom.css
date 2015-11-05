@@ -1,0 +1,232 @@
+#nvbar {
+  font-family: "Lato", sans-serif; }
+
+img {
+  width: 100%; }
+
+p, li {
+  font-family: "Lato", sans-serif; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Roboto", sans-serif; }
+
+h6, h7 {
+  font-family: sans-serif; }
+
+.tag-list {
+  line-height: 1.8em; }
+
+#content-section {
+  padding-bottom: 10%; }
+  #content-section article {
+    background-size: cover;
+    margin: 0px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 20%;
+    padding-left: 20%;
+    vertical-align: text-top; }
+    #content-section article header {
+      font-family: "Roboto", sans-serif; }
+    #content-section article .main-content {
+      display: inline-block;
+      width: 72%; }
+    #content-section article aside {
+      vertical-align: top;
+      display: inline-block;
+      width: 25%; }
+  #content-section article:first-child {
+    padding-top: 200px; }
+  #content-section #skill header, #content-section #skill .main-content {
+    padding-left: 10%;
+    padding-right: 10%; }
+  #content-section #skill .main-content {
+    padding-top: 40px;
+    padding-left: 10%;
+    padding-right: 10%; }
+    #content-section #skill .main-content h6 {
+      margin-top: 5px;
+      margin-bottom: 5px;
+      display: inline-block;
+      width: 25%; }
+    #content-section #skill .main-content .progress {
+      margin-top: 3px;
+      margin-bottom: 3px;
+      display: inline-block;
+      height: 3px;
+      width: 73%; }
+  #content-section section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-right: 20%;
+    padding-left: 20%;
+    text-align: center; }
+    #content-section section header {
+      font-family: "Roboto", sans-serif; }
+    #content-section section article {
+      overflow: scroll;
+      border: solid 1px;
+      border-radius: 2px;
+      padding: 0px;
+      width: 300px;
+      height: 400px;
+      display: inline-block;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      margin-left: 5%;
+      margin-right: 5%; }
+      #content-section section article header {
+        padding-bottom: 50%; }
+      #content-section section article details {
+        text-indent: 2em;
+        padding-left: 10%;
+        width: 90%; }
+      #content-section section article details, #content-section section article li {
+        text-align: left; }
+      #content-section section article aside, #content-section section article .main-content, #content-section section article details, #content-section section article a {
+        color: rgba(255, 255, 255, 0.8); }
+      #content-section section article a {
+        text-decoration: underline; }
+      #content-section section article aside {
+        width: 100%; }
+      #content-section section article.span-project {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 87%; }
+        #content-section section article.span-project header {
+          padding-bottom: 30%; }
+        #content-section section article.span-project ul {
+          font-size: 18px;
+          text-align: left; }
+      #content-section section article summary::-webkit-details-marker {
+        display: none; }
+
+#summery {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)), url("../img/rails-railway.jpg");
+  color: rgba(255, 255, 255, 0.65);
+  background-attachment: fixed; }
+
+#education {
+  background-image: url("../img/white-paper-texture.jpg");
+  background-repeat: repeat; }
+
+#project {
+  background-color: #414141; }
+  #project > header {
+    color: white; }
+
+#zombiemap {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/zombiemap_clipped.png"); }
+
+#dsp {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/dsp.jpg"); }
+
+#prom {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/prom.png"); }
+
+#uforent {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/uforent.jpg"); }
+
+#homecare {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/home-care.png"); }
+
+#famirent {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/famirent.jpg"); }
+
+#openhouse {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/junior_open_house.jpg"); }
+
+#si2 {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/si2lab.gif"); }
+
+#srs {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/srsLogo.jpg"); }
+
+#tnf {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.7)), url("../img/techAndFinance.jpg"); }
+
+/*  scrollbar  */
+::-webkit-scrollbar {
+  width: 0px; }
+
+::-webkit-scrollbar-track {
+  background-color: none; }
+
+::-webkit-scrollbar-track-piece {
+  background-color: none; }
+
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  border-radius: 8px;
+  background-color: none; }
+
+::-webkit-scrollbar-corner {
+  background-color: none; }
+
+.footer-distributed {
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 45px 50px;
+  margin-top: 80px; }
+  .footer-distributed header {
+    color: white; }
+
+.footer-distributed ul {
+  list-style-type: none; }
+
+.footer-distributed li {
+  display: inline; }
+
+.footer-distributed .footer-left ul, .footer-distributed .footer-left p {
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0; }
+
+/* Footer links */
+.footer-distributed ul.footer-links, .footer-distributed p.footer-links {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0 0 10px;
+  padding: 0; }
+  .footer-distributed ul.footer-links a, .footer-distributed p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit; }
+
+.footer-distributed .footer-right {
+  float: right;
+  margin-top: 6px;
+  max-width: 180px; }
+
+.footer-distributed .footer-right a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-left: 3px; }
+
+/* If you don't want the footer to be responsive, remove these media queries */
+@media (max-width: 600px) {
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    text-align: center; }
+
+  .footer-distributed .footer-right {
+    float: none;
+    margin: 0 auto 20px; }
+
+  .footer-distributed .footer-left ul.footer-links, .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8; } }
+
+/*# sourceMappingURL=personal_custom.css.map */

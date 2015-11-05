@@ -1,0 +1,313 @@
+<html lang="en">
+    <head>
+        <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>zombieMap</title>
+	   
+        <script type="text/javascript">
+			var map; // Global declaration of the map
+			var markers_map = new Array();
+			var heatMap, pointArray;
+			
+			function initMap() {
+				var myLatlng = new google.maps.LatLng(23.746527, 120.954031);
+				var myOptions = {
+			  		zoom: 8,
+					center: myLatlng,
+			  		mapTypeId: google.maps.MapTypeId.ROADMAP}
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				heatmap = new google.maps.visualization.HeatmapLayer({
+				    data: getHeatData(),
+                    map:map
+			    });
+			
+			    heatmap.set("radius" , 10 );
+			    heatmap.setMap(map);
+            }
+		
+		    function getHeatData(){
+                return [
+		          new google.maps.LatLng( 23.019810766591 , 120.26542229125),
+				  new google.maps.LatLng( 23.063815829056 , 120.22756105933),
+				  new google.maps.LatLng( 23.048510678461 , 120.23695338635),
+				  new google.maps.LatLng( 23.053970848162 , 120.3193385827),
+				  new google.maps.LatLng( 23.038474478749 , 120.30671428643),
+				  new google.maps.LatLng( 22.983591979693 , 120.22386983332),
+				  new google.maps.LatLng( 23.028022112776 , 120.31602977819),
+				  new google.maps.LatLng( 23.017059050449 , 120.29450976386),
+				  new google.maps.LatLng( 22.982854986751 , 120.22063385309),
+				  new google.maps.LatLng( 23.012888573425 , 120.26402521818),
+				  new google.maps.LatLng( 23.000833513135 , 120.21752647478),
+				  new google.maps.LatLng( 23.032196997007 , 120.20721513288),
+				  new google.maps.LatLng( 22.984914231736 , 120.23026107289),
+				  new google.maps.LatLng( 23.003420273815 , 120.32513958209),
+				  new google.maps.LatLng( 22.989906248122 , 120.20438927495),
+				  new google.maps.LatLng( 23.058822373582 , 120.26890845611),
+				  new google.maps.LatLng( 23.027482184947 , 120.30093033369),
+				  new google.maps.LatLng( 23.046611262187 , 120.23592620046),
+				  new google.maps.LatLng( 22.986385969045 , 120.27019347255),
+				  new google.maps.LatLng( 22.998858184969 , 120.29001208099),
+				  new google.maps.LatLng( 23.014388552836 , 120.2309099736),
+				  new google.maps.LatLng( 23.059105963861 , 120.31446988455),
+				  new google.maps.LatLng( 22.992884260852 , 120.23616610697),
+				  new google.maps.LatLng( 23.037402538075 , 120.22155775635),
+				  new google.maps.LatLng( 23.01814529206 , 120.32545193684),
+				  new google.maps.LatLng( 23.038799262922 , 120.28181565154),
+				  new google.maps.LatLng( 22.99004170228 , 120.22896314613),
+				  new google.maps.LatLng( 23.041273325023 , 120.22046614416),
+				  new google.maps.LatLng( 23.019884879623 , 120.31765121524),
+				  new google.maps.LatLng( 22.991926997503 , 120.26901186409),
+				  new google.maps.LatLng( 23.064960353731 , 120.32609043408),
+				  new google.maps.LatLng( 22.986412232401 , 120.25885018173),
+				  new google.maps.LatLng( 23.05034848378 , 120.30138796099),
+				  new google.maps.LatLng( 23.0453962222 , 120.30655948782),
+				  new google.maps.LatLng( 23.010566604937 , 120.31703929071),
+				  new google.maps.LatLng( 23.028498900619 , 120.29014406717),
+				  new google.maps.LatLng( 22.993608661774 , 120.25210848314),
+				  new google.maps.LatLng( 23.034269823385 , 120.23654376543),
+				  new google.maps.LatLng( 23.040730788847 , 120.22990534946),
+				  new google.maps.LatLng( 23.019079260172 , 120.21207267551),
+				  new google.maps.LatLng( 22.99892447296 , 120.21068249629),
+				  new google.maps.LatLng( 23.044758976045 , 120.23999044724),
+				  new google.maps.LatLng( 23.005835783023 , 120.24991711147),
+				  new google.maps.LatLng( 23.020769199199 , 120.29121098679),
+				  new google.maps.LatLng( 23.007686899906 , 120.27306031764),
+				  new google.maps.LatLng( 23.002415880334 , 120.23126381689),
+				  new google.maps.LatLng( 23.030349567787 , 120.23979817108),
+				  new google.maps.LatLng( 23.042050612429 , 120.24248339417),
+				  new google.maps.LatLng( 22.988755697266 , 120.25188838083),
+				  new google.maps.LatLng( 22.994393414449 , 120.2544225656),
+				  new google.maps.LatLng( 23.008662241798 , 120.28726945081),
+				  new google.maps.LatLng( 22.991181370033 , 120.25853181051),
+				  new google.maps.LatLng( 22.987458179548 , 120.29083545916),
+				  new google.maps.LatLng( 23.045611006084 , 120.29465064939),
+				  new google.maps.LatLng( 23.064027644821 , 120.22017509771),
+				  new google.maps.LatLng( 23.053969049302 , 120.21775284424),
+				  new google.maps.LatLng( 22.99952978935 , 120.2676095266),
+				  new google.maps.LatLng( 23.018822293021 , 120.26284436177),
+				  new google.maps.LatLng( 23.061721326415 , 120.31054113356),
+				  new google.maps.LatLng( 22.997990324962 , 120.22674996478),
+				  new google.maps.LatLng( 23.019191778865 , 120.25593319944),
+				  new google.maps.LatLng( 23.019016300072 , 120.32440707759),
+				  new google.maps.LatLng( 23.046081497917 , 120.2151257803),
+				  new google.maps.LatLng( 23.007200398219 , 120.30391550258),
+				  new google.maps.LatLng( 23.025474837073 , 120.25758822841),
+				  new google.maps.LatLng( 23.001063497386 , 120.30293995801),
+				  new google.maps.LatLng( 22.991390217679 , 120.24455970096),
+				  new google.maps.LatLng( 23.003312072386 , 120.22589061317),
+				  new google.maps.LatLng( 22.98460015078 , 120.32354534447),
+				  new google.maps.LatLng( 23.063884455565 , 120.3231338434),
+				  new google.maps.LatLng( 22.990574254783 , 120.29426246212),
+				  new google.maps.LatLng( 22.988540823439 , 120.24157616153),
+				  new google.maps.LatLng( 23.003599350328 , 120.26562810446),
+				  new google.maps.LatLng( 23.052316706449 , 120.22105375214),
+				  new google.maps.LatLng( 23.01385860868 , 120.32547399721),
+				  new google.maps.LatLng( 23.011689813121 , 120.30142543854),
+				  new google.maps.LatLng( 23.017617236707 , 120.29815849859),
+				  new google.maps.LatLng( 23.049495734197 , 120.21879344182),
+				  new google.maps.LatLng( 23.058677115637 , 120.20903473722),
+				  new google.maps.LatLng( 23.06544001975 , 120.24729656537),
+				  new google.maps.LatLng( 23.025194035027 , 120.22270201259),
+				  new google.maps.LatLng( 22.995249941638 , 120.27847864485),
+				  new google.maps.LatLng( 23.025652474498 , 120.25336316657),
+				  new google.maps.LatLng( 23.052279829819 , 120.26965487368),
+				  new google.maps.LatLng( 23.014389092494 , 120.29190839524),
+				  new google.maps.LatLng( 23.025784420879 , 120.26228395322),
+				  new google.maps.LatLng( 23.021035610365 , 120.27533040472),
+				  new google.maps.LatLng( 23.051914571296 , 120.28969797144),
+				  new google.maps.LatLng( 22.988592270835 , 120.2752787634),
+				  new google.maps.LatLng( 23.056859727379 , 120.25878249651),
+				  new google.maps.LatLng( 23.031499219213 , 120.22555331516),
+				  new google.maps.LatLng( 23.00240526706 , 120.32381495726),
+				  new google.maps.LatLng( 23.066159653693 , 120.3276954512),
+				  new google.maps.LatLng( 22.989776190544 , 120.30399434333),
+				  new google.maps.LatLng( 22.985558133673 , 120.20697234349),
+				  new google.maps.LatLng( 22.996006542154 , 120.27035115404),
+				  new google.maps.LatLng( 22.998680637487 , 120.24318230673),
+				  new google.maps.LatLng( 22.994240601292 , 120.28927719498),
+				  new google.maps.LatLng( 23.046665677702 , 120.32019705691),
+				  new google.maps.LatLng( 23.001489737263 , 120.215108859)
+            ];
+        }
+		</script>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+     
+        <!-- jQuery core js -->
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+
+        <!-- Custom styles for this template -->
+        <link href="css/bj.css" rel="stylesheet">
+        
+        <!-- Custom JavaScript for this template -->
+        <script src="js/jquery.tinyscrollbar.js"></script>
+        
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw6xABEqWcKQTAX2ErJe9mYpiqAjtxhbM&libraries=visualization&callback=initMap">
+        </script>
+
+    </head>
+
+    <body>
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">zombieMap</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          
+           <form class="navbar-form navbar-right" id="logoutForm">	
+                <button class="btn btn-default">登出</button>
+           </form>
+           
+           <form class="navbar-form navbar-right" role="search" method="get" action="/index.php/welcome/index/">
+            	<div class="form-group">
+	                <input type="text" class="form-control" placeholder="搜尋..." name="search">
+                </div>
+                <button class="btn btn-default" type="submit">搜尋</button>
+           </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+        <div class="mainContainer" id="map">
+            <div class="mapContainer">
+                <div id="map_canvas"></div>	
+            </div>
+    	  
+    <div class="sidebar">
+      
+      	  <!-- if Root, enable add user, else don't -->
+		  <div class="sidebarHeader row">
+          					  		<div class="col-md-4 btn" id="addUserBtn">新增使用者</div>
+			  		<div class="col-md-4 btn" id="diseaseListBtn">病歷管理</div>
+			      	<div class="col-md-4 btn" id="addPatientBtn">新增病例</div>
+		  			
+          </div>
+          <!-- if Root, enable add user form, else not -->
+		  <div class="sidebarContentContainer">
+                          <div class="sidebarFormContainer" id="addUser">
+                  <h4>新增使用者</h4>
+                  <form role="addUser" id="addUserForm">
+                      <div class="form-group">
+                          <label for="signUpUserName">Username:</label>
+                          <input type="text" class="form-control" id="signUpUserName" placeholder="Enter Username" name="userName">
+                          <label for="signUpPassword">Password:</label>
+                          <input type="text" class="form-control" id="signUpPassword" placeholder="Enter Password" name="password">
+                          <br>
+                          <button type="submit" class="btn">加入</button>
+                      </div>
+                  </form>
+              </div>
+                        <div class="sidebarListContainer center" id="patientList">
+              <div class="list-group" id="frontOfPateintList">
+              	  <h3 class="list-group-item-heading">病歷列表</h3>
+              </div>
+              <div class='list-group listBlock patient_listblock'>
+                  <h5 class='list-group-item-heading'>20 歲 男性 病徵: 傳染病</h5>
+                  <p class='list-group-item-text'>住址:台南市奇怪區奇怪路</p>
+                  <p class='list-group-item-text'>公司:台南市奇怪區奇怪路</p>
+              </div>
+              <div class='list-group listBlock patient_listblock'>
+                  <h5 class='list-group-item-heading'>20 歲 男性 病徵: 傳染病</h5>
+                  <p class='list-group-item-text'>住址:台南市奇怪區奇怪路</p>
+                  <p class='list-group-item-text'>公司:台南市奇怪區奇怪路</p>
+              </div>
+              <div class='list-group listBlock patient_listblock'>
+                  <h5 class='list-group-item-heading'>20 歲 男性 病徵: 傳染病</h5>
+                  <p class='list-group-item-text'>住址:台南市奇怪區奇怪路</p>
+                  <p class='list-group-item-text'>公司:台南市奇怪區奇怪路</p>
+              </div>
+              <div class='list-group listBlock patient_listblock'>
+                  <h5 class='list-group-item-heading'>20 歲 男性 病徵: 傳染病</h5>
+                  <p class='list-group-item-text'>住址:台南市奇怪區奇怪路</p>
+                  <p class='list-group-item-text'>公司:台南市奇怪區奇怪路</p>
+              </div>
+              <div class='list-group listBlock patient_listblock'>
+                  <h5 class='list-group-item-heading'>20 歲 男性 病徵: 傳染病</h5>
+                  <p class='list-group-item-text'>住址:台南市奇怪區奇怪路</p>
+                  <p class='list-group-item-text'>公司:台南市奇怪區奇怪路</p>
+              </div>
+              <div class='list-group listBlock patient_listblock'>
+                  <h5 class='list-group-item-heading'>20 歲 男性 病徵: 傳染病</h5>
+                  <p class='list-group-item-text'>住址:台南市奇怪區奇怪路</p>
+                  <p class='list-group-item-text'>公司:台南市奇怪區奇怪路</p>
+              </div>
+              <div class="list-group" id="endOfPateintList">
+              	  <h3 class="list-group-item-heading">載入更多</h3>
+              </div>
+            </div>
+            <div class="sidebarFormContainer" id="addPatient">
+                <h4>新增病例</h4>
+                <form role="addPatient" id="addPatientForm">
+                    <div class="form-group">
+                        <label for="patientAge">年齡:</label>
+                        <input type="text" class="form-control" id="patientAge" placeholder="輸入年齡" name="patientAge">
+                        <label for="patientGender">性別:</label>
+                        <input type="text" class="form-control" id="patientGender" placeholder="輸入性別(男:1 女:0)" name="patientGender">
+                        <label for="patientDisease">病徵:</label>
+                        <input type="text" class="form-control" id="patientDisease" placeholder="輸入病徵" name="patientDisease">
+                        <label for="patientHome">住家地址:</label>
+                        <input type="text" class="form-control" id="patientHome" placeholder="輸入住家地址" name="patientHome">
+                        <label for="patientWorkPlace">公司地址:</label>
+                        <input type="text" class="form-control" id="patientWorkPlace" placeholder="輸入公司地址" name="patientWorkPlace">
+                        <br>
+                        <button type="submit" class="btn">加入</button>
+                    </div>
+                </form>
+            </div>
+	  	</div>
+      </div>
+      
+    
+      
+      <script>   var error = true;
+   var isloading = false
+
+
+   var countPatient = 0;
+   
+   $(document).ready(function(e) {
+		event.preventDefault();
+	});
+   $("#addUserBtn").click(function( event ){
+	   event.preventDefault();
+	   $("#addPatient").hide('slow');
+	   $("#addUser").show('slow');
+	   $("#patientList").hide('slow');
+   });
+   $("#addPatientBtn").click(function( event ){
+	   event.preventDefault();
+	   $("#addUser").hide('slow');
+	   $("#addPatient").show('slow');
+	   $("#patientList").hide('slow');
+   });
+   $("#diseaseListBtn").click(function( event ){
+	   event.preventDefault();
+	   $("#addUser").hide('slow');
+	   $("#addPatient").hide('slow');
+	   $("#patientList").show('slow');
+   });
+   
+   </script>      
+      </div>		
+</body></html>
